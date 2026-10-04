@@ -1,0 +1,14 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# 日志/临时
+*.log
+uvicorn_out.log
+uvicorn_err.log
+
+# 本地图标脚本产物（不需要进仓库）
+app_icon/
+gen_icon.py
