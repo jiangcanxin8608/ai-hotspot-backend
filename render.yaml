@@ -1,0 +1,16 @@
+# Render Blueprint —— 一键部署 AI 热点后端
+# 用法：Render 控制台 → New + → Blueprint → 关联本仓库即可自动创建 Web Service。
+services:
+  - type: web
+    name: ai-hotspot-backend
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: TRANSLATE_ENABLED
+        value: "1"
